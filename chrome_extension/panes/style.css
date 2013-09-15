@@ -1,0 +1,172 @@
+/* Put your CSS here */
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+}
+
+h2 { margin-top: 0px; color: #666; font-weight: normal; }
+
+.info-message {
+    text-align: center;
+    color: #666;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #AAA;
+    background: #fbfbfb;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 10px;
+
+}
+
+#requests { border-right: 1px solid gray;
+    box-sizing: border-box;
+    display: block;
+    width: 15%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+}
+
+#requests header {
+    background: -webkit-linear-gradient(top, rgb(236,236,236) 0%, rgb(217,217,217) 100%);
+    line-height: 30px;
+    font-size: 12px;
+    border-bottom: 1px solid #a3a3a3;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#requests header .filtered {
+    float: right;
+    line-height: 15px;
+    margin-top: 6px;
+    color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+    background: #3879d9;
+    border: 1px solid #3879d9;
+    border-radius: 10px;
+}
+
+#requests a {
+    list-style-type: none; padding: 5px 5px 5px 5px; margin: 0;
+    font-size: 12px;
+    display: block;
+}
+
+#requests a { text-decoration: none; }
+#requests a:hover { color: #333; text-decoration: underline; }
+
+#requests .active {
+    background: #3879d9 !important;
+    color: white !important;
+}
+
+#requests a:nth-child(odd) {
+   background-color: #eee;
+}
+
+#requests a .name {
+    display: block;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+#requests a .path {
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+#requests a.active .name { color: white; }
+#requests a.active .path { color: white; }
+#requests a:hover.active { text-decoration: none; }
+
+#details {
+    box-sizing: border-box;
+    height: 100%;
+    width: 85%;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: scroll;
+    background: #E6E6E6;
+}
+
+#details table {
+    margin: 0; padding: 0;
+    width: 100%;
+}
+
+#details table thead {
+    margin: 0; padding: 0;
+    background: -webkit-linear-gradient(top, rgb(236,236,236) 0%, rgb(217,217,217) 100%);
+    height: 100%;
+}
+
+#details table thead tr {
+    border-bottom: 1px solid #a3a3a3;
+}
+
+#details table thead td {
+    margin: 0; padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 30px;
+    border-right: 1px solid #b3b3b3;
+}
+
+#details table thead td.name {
+    width: 10%;
+}
+
+#details table thead td.time {
+    width: 60px;
+    white-space: nowrap;
+}
+
+#details table tbody tr {
+    background: #e1e1e1;
+}
+
+#details table tbody tr:nth-child(odd) {
+    background: #ededed;
+}
+
+#details table tbody td {
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 20px;
+    border-right: 1px solid #d2d2d2;
+}
+
+#details table tbody td.time {
+    text-align: right;
+    width: 60px !important;
+    white-space: nowrap;
+}
+
+#details table tbody tr td.timeline {
+    background: white !important;
+}
+
+#details table tbody tr td.timeline .bar {
+    display: block;
+    height: 10px;
+    background: #80aff3;
+    width: 0;
+}

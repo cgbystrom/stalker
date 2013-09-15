@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Stalker</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="text/x-handlebars">
+        {{outlet "request-list"}}
+        <div id="details">
+            {{outlet}}
+        </div>            
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="request-list">
+        <nav id="requests">
+            <header class="requests">
+                URL
+                <div class="filtered" title="Non-Stalker requests filtered">{{requestInfo.numFiltered}}</div>
+            </header>
+            {{#each requests}}
+        	
+        		{{#link-to "request" id}}
+                    <div class="name">{{name}}</div>
+        		    <div class="path">{{path}}</div>
+                {{/link-to}}
+            {{else}}
+                <a class="empty">
+                    <div class="name">No Stalker responses captured</div>
+                    <div class="path">Must contain X-Stalker-Body header</div>
+                </a>
+            {{/each}}
+        </nav>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="requests">
+        <div class="info-message">
+            <h2>No Stalker response selected</h2>
+            Please select a request to the left.<br>
+            Make sure Stalker has been activated in your server.
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="request/index">
+        <table>
+            <thead>
+                <tr>
+                    <td class="name">Name</td>
+                    <td class="time">Time</td>
+                    <td class="timeline">Timeline</td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each tracesAsObj}}
+                <tr>
+                    <td class="name">{{this.name}}</td>
+                    <td class="time">{{duration}} ms</td>
+                    <td class="timeline">
+                        <div class="bar" {{bind-attr style="style"}}></div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <script src="../vendor/underscore.js"></script>
+    <script src="../vendor/underscore.string.js"></script>
+    <script src="../vendor/jquery-1.9.1.js"></script>
+    <script src="../vendor/handlebars-1.0.0.js"></script>
+    <script src="../vendor/ember-1.0.0.js"></script>
+    <script src="../vendor/base64.js"></script>
+
+    <script src="app.js"></script>
+    <!--script src="debug.js"></script-->
+
+</body>
+</html> 

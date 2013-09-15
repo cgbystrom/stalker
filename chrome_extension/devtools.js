@@ -1,0 +1,1 @@
+chrome.devtools.panels.create("Stalker", "images/stalker-icon.png", "panes/index.html");
